@@ -4,15 +4,6 @@
   connection: local
   gather_facts: false
   no_log: "{{ molecule_no_log }}"
-  vars:
-    server:
-      changed: true
-      results:
-      - instance: localhost
-        address: ::1
-        user: sfmalp
-        port: 22
-        identity_file: .ssh/id_ed25519
   tasks:
 
     # TODO: Developer must implement and populate 'server' variable

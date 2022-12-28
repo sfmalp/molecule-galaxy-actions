@@ -2,8 +2,8 @@
 # This is an example playbook to execute Ansible tests.
 
 - name: Verify
-  hosts: all
-  gather_facts: false
+  hosts: localhost
+  gather_facts: true # no idea what else to assert over
   tasks:
   - name: Example assertion
     ansible.builtin.assert:

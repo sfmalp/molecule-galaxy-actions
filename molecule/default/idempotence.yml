@@ -3,10 +3,6 @@
   connection: local
   gather_facts: false
   tasks:
-  - name: create dir
-    ansible.builtin.file:
-      path: /tmp/foo
-      state: directory
-  - name: echo
-    ansible.builtin.command:
-      cmd: echo fail
+    - name: "Include sfmalp.dummy"
+      ansible.builtin.include_role:
+        name: "sfmalp.dummy"

@@ -3,3 +3,11 @@
 - name: foo
   ansible.builtin.debug:
     msg: hi
+- name: create dir
+  ansible.builtin.file:
+    path: /tmp/foo
+    state: directory
+- name: echo
+  ansible.builtin.command:
+    cmd: echo if changed_when is not set to false, this task should fail idempotence
+  changed_when: false
