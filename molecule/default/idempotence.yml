@@ -2,4 +2,11 @@
   hosts: localhost
   connection: local
   gather_facts: false
-  no_log: "{{ molecule_no_log }}"
+  tasks:
+  - name: create dir
+    ansible.builtin.file:
+      path: /tmp/foo
+      state: directory
+  - name: echo
+    ansible.builtin.command:
+      cmd: echo fail
