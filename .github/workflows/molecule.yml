@@ -1,0 +1,24 @@
+name: molecule stuff
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+#  docker:
+#    name: test docker driver
+#    runs-on: ubuntu-latest
+#    container:
+#      image: retr0h/molecule
+#    steps:
+#    - name: docker2
+#      run: molecule test -s docker
+  delegated:
+    runs-on: ubuntu-latest
+    name: test delegated driver
+    steps:
+    - name: delegated ensure pip
+      run: |
+        pip install molecule
+    - name: delegated checkout
+      uses: actions/checkout@v3
+    - name: delegated test
+      run: |
+        molecule test
