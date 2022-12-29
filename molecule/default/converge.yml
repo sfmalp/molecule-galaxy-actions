@@ -1,8 +1,0 @@
----
-- name: Converge
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: "Include sfmalp.dummy"
-      ansible.builtin.include_role:
-        name: "sfmalp.dummy"

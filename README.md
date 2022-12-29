@@ -16,4 +16,24 @@ Unfortunately, importing roles (that are not part of a collection) into galaxy s
 * each role needs to be at the root level of its own dedicated repository
 * there does not seem to be any API for importing them
 
-This seems to be different to collections.
+So far, the best degree of automation I achieved:
+
+* `ansible-galaxy collection init sfmalp.dummy_collection`
+* I see to reason to include the namespace (== github name) in the path, so put repo inside it
+* do molecule steps described above in `dummy_collection.roles`
+* galaxy requires an api token to publish, use https://github.com/marketplace/actions/publish-ansible-role-to-galaxy if you trust github with it, but do not include it under `.github/workflows/`
+* in the pipeline:
+```
+    steps:
+    - name: delegated ensure pip
+      run: |
+        pip install molecule
+    - name: delegated checkout
+      uses: actions/checkout@v3
+    - name: delegated test
+      run: |
+        cd sfmalp/dummy_collection/roles/dummy_role
+        molecule test
+```
+
+note that dependency is from same collection, can this be resolved locally to avoid cyclic dependencies?
