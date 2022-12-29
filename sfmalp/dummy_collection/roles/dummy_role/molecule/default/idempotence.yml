@@ -5,4 +5,4 @@
   tasks:
     - name: "Include sfmalp.dummy"
       ansible.builtin.include_role:
-        name: "sfmalp.dummy"
+        name: "sfmalp.dummy_collection.dummy_role"

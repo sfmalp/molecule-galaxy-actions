@@ -1,2 +1,2 @@
-roles:
-- sfmalp.dummy_collection.dependency_role
+collections:
+- sfmalp.dummy_collection #FIXME cyclic dependency?
