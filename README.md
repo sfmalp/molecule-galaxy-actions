@@ -32,7 +32,7 @@ So far, the best degree of automation I achieved:
       uses: actions/checkout@v3
     - name: delegated test
       run: |
-        cd sfmalp/dummy_collection/roles/dummy_role
+        cd dummy_collection/roles/dummy_role
         molecule test
 ```
 
