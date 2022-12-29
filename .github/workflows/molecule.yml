@@ -21,7 +21,5 @@ jobs:
       uses: actions/checkout@v3
     - name: delegated test
       run: |
-        ansible-galaxy collection build sfmalp/dummy_collection
-        ansible-galaxy collection publish sfmalp-dummy_collection-*.tar.gz #FIXME suboptimal to publish before testing, but dependency is in same collection
         cd sfmalp/dummy_collection/roles/dummy_role
         molecule test
