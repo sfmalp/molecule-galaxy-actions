@@ -16,6 +16,7 @@ jobs:
     steps:
     - name: delegated ensure pip
       run: |
+        ls -la ~
         pip install molecule
     - name: delegated checkout
       uses: actions/checkout@v3

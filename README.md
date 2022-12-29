@@ -11,6 +11,7 @@ There are 4 more possible playbooks which seem unnecessary on throwaway machines
 * `create.yml` and `destroy.yml` are created automatically, and can be removed
 * `prepare.yml` and `cleanup.yml` are optional parts of the testing sequence, but not created automatically
 
+If ansible is used to resolve dependencies, this is done by `requirements.yml`, `meta/` is not used.
 Unfortunately, importing roles (that are not part of a collection) into galaxy seems to be cumbersome:
 
 * each role needs to be at the root level of its own dedicated repository
@@ -36,4 +37,4 @@ So far, the best degree of automation I achieved:
         molecule test
 ```
 
-note that dependency is from same collection, can this be resolved locally to avoid cyclic dependencies?
+note that `dependency` is from same collection, in which is resolved locally.
