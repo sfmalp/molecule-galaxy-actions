@@ -24,3 +24,4 @@ jobs:
       run: |
         cd dummy_collection/roles/dummy_role
         molecule test
+        ls -la ~
